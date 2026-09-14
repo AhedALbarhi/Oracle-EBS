@@ -1,0 +1,17 @@
+Using FTP " file transfer protocol" tools :
+1- WINSCP "windows"
+2-PUTTY "UNIX"
+
+- place the .fmx file in EBS:
+   -login to WINSCP using:
+      -host name (EBS Server): EBS.EXAMPLE.COM
+      -username : root
+      -password:----
+
+then when access (LHS) go to your desktop
+ -chose the folder thats saves the forms "AHED"
+   -will appear EMP.fmx and EMP.fmb copy "EMP.fmx"
+
+then go to right side (RHS) what u login as root move to this path:
+  </root> -> u01 -> install -> vision -> fs1 -> EBSapps -> appl -> fnd -> 12.0.0 -> forms ->US
+  -paste the "EMP.fmx" copy here.
