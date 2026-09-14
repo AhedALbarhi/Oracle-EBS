@@ -1,0 +1,64 @@
+- Create procedure and function using SQLPlus:
+
+- create procedure and function in the database:
+- function:
+    
+SQL>  CREATE OR REPLACE FUNCTION AHED_FN_TEST RETURN VARCHAR2 IS
+       V_MSG VARCHAR2(2000);
+       BEGIN
+         V_MSG:= 'WELCOME TO ORACLE';
+         RETURN V_MSG;
+       END;
+       /
+------
+-call the function:
+
+SQL> SELECT AHED_FN_TEST FROM DUAL;
+
+SQL> DECLARE
+       X VARCHAR2(2000);
+     BEGIN
+       AHED_PR_TEST;
+       X:= AHED_FN_TEST;
+     END;
+      /
+------------------------------------------
+- PROCEDURE:
+
+SQL> CREATE OR REPLACE PROCEDURE AHED_PR_TEST IS
+       BEGIN
+         DBMS_OUTPUT.PUT_LINE('WELCOME TO ORACLE EBS PROCEDURE');
+       END;
+       /
+-------------------
+-call procedure:
+- using command line execution:
+
+SQL> SET SERVEROUTPUT ON;
+SQL> EXEC AHED_PR_TEST;
+
+-procedure call another procedures:
+SQL>  BEGIN
+       AHED_PR_TEST;
+       SAFA1_PR_TEST;
+      END;
+      /
+-------------------------
+- If there is an error :
+SQL> SHOW ERR;
+-----------------------------------------------
+- in oracle EBS precedure should be in this way :
+   1.MANDATORY PARAMETERS
+     a. ERRBUF OUT VARCHAR2
+b. RETCODE OUT NUMBER
+2. FND_FILE.PUT_LINE(FND_OUTPUT, ‘ ORACLE EBS PROCEDURE !!’);
+
+
+SQL> CREATE OR REPLACE PROCEDURE AHED_PR_EBS(ERRBUF OUT VARCHAR2,
+RETCODE OUT NUMBER) IS
+BEGIN
+FND_FILE.PUT_LINE(FND_FILE.OUTPUT, ‘ WELCOME TO ORACLE EBS PROC..!’);
+END;
+/
+
+Procedure Created
