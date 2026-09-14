@@ -1,0 +1,51 @@
+Create master block "DEPT" and detail block "EMP":
+
+Steps to login to EBS Server:
+- Open Remote Desktop connection ⇨ Windows
+   Start > Run > mstsc
+
+
+- DEVELOP A FORM   - USING FORM BUILDER
+    a. OPEN ORACLE FORMS BUILDER
+      b. MODULE • FORM MODULE
+       Database Object >>> File >>> Connect Username: APPS
+                                           Password: ---
+                                           HostString: EBSDB
+
+create canves:
+  -after create module click on canves and " + " to create new canves
+  - will appear " small sequer"  behind the new canves 
+    -right click on " small sequer"  chose property palette
+      - click on name of canves and change it to ex: "CAN_EMP_DEPT"
+       -press enter to save it auto.
+
+-create date block:
+    -click on date block, and click " + " to create new data block
+     - use "wizard" -> ok ->next 
+      -chose "table/view" 
+       -name of table ex: "DEPT", then press "tab"
+        -will appear all col related to "DEPT" block, click  ">>", next -> next->, chose "layout design"
+          ->finish -> next, will appear canves name "CAN_EMP", ->next ,click  ">>", -> next, 
+            -chose "tabular"
+              -form title: "DEPARTMENT DATAILS", record = 5 , -> next -> finish.
+
+
+    -click on date block, and click " + " to create new data block
+     - use "wizard" -> ok ->next 
+      -chose "table/view" 
+       -name of table ex: "EMP", then press "tab"
+        -will appear all col related to "EMP" block, click  ">>", next -> next->, chose "layout design"
+         -You’ll be prompted to CREATE RELATIONSHIP
+            b. Select Remove Auto Join and Click on Create Relationship
+                i. Master Block: DEPT
+                ii. Master Item: DEPTNO Detail Item: DEPTNO
+                Join Displayed: EMP.DEPTNO = DEPT.DEPTNO
+            ->NEXT 
+            -chose "tabular" -named " EMPLOYEE DATEILS"
+            -5 records
+            -finish
+   - Triggers and 3 Program Units are written by system automatically to ensure the
+      -click on triggers -> right click -> pl/sql editor
+      - blocks work as a Master – Detail block
+      - SAVE ⇨ AhedMasterDetailForm.fmb
+      - COMPILE ⇨ AhedMasterDetailForm.fmx
