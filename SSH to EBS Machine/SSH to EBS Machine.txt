@@ -1,0 +1,12 @@
+SSH to EBS Machine:
+
+PUTTY: Login to Putty
+Host: EBS.EXAMPLE.COM
+Login as: root Password: ---
+# pwd
+/root
+# cd /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
+# pwd
+/u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/forms/US
+# ls A*.fmx
+AhedEmp.fmx
