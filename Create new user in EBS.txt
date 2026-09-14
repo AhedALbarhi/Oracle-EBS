@@ -1,0 +1,22 @@
+Create new user in EBS:
+
+- login to EBS server using admin user:
+           USERNAME: OPERATIONS 
+           PASSWORD: ----
+
+-on left side the "RESPONSIBILITY"
+-chose system adminstritor
+    -security
+      -user
+        -define
+➢ > YELLOW (MANDATORY FIELDS), click on VIEW ⇨ QUERY BY EXAMPLE ⇨ ENTER
+➢ USERNAME: AHED 
+➢ PASSWORD: ----, 
+    click on VIEW ⇨ QUERY BY EXAMPLE ⇨ RUN
+⇨ Help > Record History
+Table_Name: FND_USER
+➢ >RESPONSIBILITY
+➢ Application Developer ⇨ Help > Record History
+➢ System Administrator Table Name: FND_USER_RESP_GROUPS_DIRECT
+➢ <SAVE>
+   
