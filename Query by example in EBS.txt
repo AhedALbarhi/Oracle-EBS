@@ -1,0 +1,17 @@
+Query by example in EBS:
+
+- login to EBS server using admin user:
+           USERNAME: OPERATIONS 
+           PASSWORD: ----
+
+-on left side the "RESPONSIBILITY"
+-chose system adminstritor
+    -security
+      -user
+        -define
+➢ > YELLOW (MANDATORY FIELDS), click on VIEW ⇨ QUERY BY EXAMPLE ⇨ ENTER
+     ex: %O or %O or OPERATIONS 
+
+    click on VIEW ⇨ QUERY BY EXAMPLE ⇨ RUN
+
+   
