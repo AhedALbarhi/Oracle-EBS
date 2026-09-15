@@ -1,0 +1,51 @@
+
+SQL> SET SERVEROUTPUT ON;
+SQL> 
+SQL> DECLARE
+  2      N NUMBER := '&N';
+  3      FACT NUMBER := 1;
+  4      
+  5      INVALID_NUMBER EXCEPTION;
+  6  
+  7  BEGIN
+  8     
+  9      IF N < 0 OR N != TRUNC(N) THEN
+ 10          RAISE INVALID_NUMBER;
+ 11      END IF;
+ 12  
+ 13      
+ 14      FOR I IN 1..N LOOP
+ 15          FACT := FACT * I;
+ 16      END LOOP;
+ 17  
+ 18      DBMS_OUTPUT.PUT_LINE('Factorial of ' || N || ' = ' || FACT);
+ 19  
+ 20  EXCEPTION
+ 21      WHEN INVALID_NUMBER THEN
+ 22          DBMS_OUTPUT.PUT_LINE('INPUT MUST BE A NON-NEGATIVE INTEGER!');
+ 23  
+ 24      WHEN VALUE_ERROR THEN
+ 25          DBMS_OUTPUT.PUT_LINE('INPUT MUST BE A NUMBER!');
+ 26  
+ 27      WHEN OTHERS THEN
+ 28          DBMS_OUTPUT.PUT_LINE('CHECK YOUR PROGRAM!');
+ 29  END;
+ 30  /
+Enter value for n: 5
+old   2:     N NUMBER := '&N';
+new   2:     N NUMBER := '5';
+Factorial of 5 = 120
+
+PL/SQL procedure successfully completed.
+
+
+SQL> /
+Enter value for n: -9
+old   2:     N NUMBER := '&N';
+new   2:     N NUMBER := '-9';
+INPUT MUST BE A NON-NEGATIVE INTEGER!
+
+PL/SQL procedure successfully completed.
+
+
+SQL> 
