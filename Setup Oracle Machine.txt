@@ -1,0 +1,12 @@
+Open Remote Desktop connection ⇨ Windows
+Start > Run > mstsc
+
+IP Address: 122.175.43.246:3338
+  username: ask....
+  password:......
+
+--------------------------------
+- Open Mozilla Firefox
+
+Login Username: operations 
+Password: ......
