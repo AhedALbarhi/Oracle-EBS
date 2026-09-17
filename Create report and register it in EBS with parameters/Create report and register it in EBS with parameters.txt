@@ -1,0 +1,50 @@
+- Open Reports Builder
+2. Report Module
+1. WIZARD
+2. Connect to Database: APPS/apps@EBSDB
+3. Click on Query Builder
+4. Select EMP ⇨ ALL COLUMNS • The below QUERY is built by ORACLE
+⇨ SELECT ALL EMP.EMPNO, EMP.ENAME,
+EMP.JOB, EMP.MGR, EMP.HIREDATE, EMP.SAL, EMP.COMM, EMP.DEPTNO
+FROM EMP
+<OK>
+OR ⇨ Just TYPE the QUERY:
+SELECT * FROM EMP;
+5. Select AGGREGATE Functions
+6. Empno ⇨ COUNT
+7. Sal ⇨ SUM
+<SAVE> ANILEMPREPORT.rdf • Report Binary Format
+=-------------------------------------------------
+
+- REGISTER THE REPORT IN ORACLE EBS SERVER
+1. Move .rdf file to fnd/12.0.0/reports/US
+LOGIN TO WINSCP
+Move ANILEMPREPORT.rdf TO
+EBS SERVER ⇨ /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/reports/US
+2. LOGIN TO EBS and CREATE EXECUTABLE
+Execution Method: ORACLE REPORTS
+3. CONCURRENT PROGRAM
+4. ADD YOUR CONCURRENT PROGRAM TO THE EXISTING REQUEST GROUP
+5. SWITCH TO YOUR RESPONSIBILITY
+6. SUBMIT THE REQUEST AND VIEW THE REPORT OUTPUT
+
+------------------------------------------------------------
+- PASSING A PARAMETER TO A REPORT
+1. Open REPORTS BUILDER
+2. SELECT * FROM EMP WHERE DEPTNO = :DNO
+a. THE QUERY Q_1 has created a Bind Parameter DNO
+3. Save ANILPARREPORT.rdf
+4. COMPILE
+5. Move ANILPARREPORT.rdf TO EBS Server
+➢ /u01/install/VISION/fs1/EBSapps/appl/fnd/12.0.0/reports/US
+6. Create Executable
+7. Create Concurrent Program
+a. Parameters
+Name: DNO
+Value set: NUM <TAB> Select NUMBER_15 (Default)
+Token: DNO
+<SAVE>
+8. ADD your Program to the existing REQUEST GROUP
+9. Switch to your RESPONSIBILITY
+10. Submit the REQUEST and Pass the PARAMETER DNO: 30
+11. View OUTPUT
