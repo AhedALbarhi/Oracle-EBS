@@ -1,0 +1,34 @@
+- Register Form in EBS:
+-navigates to Application developer
+   - click on Application
+    -click on form
+      - register your form, appl/AOL , but username
+      -then save it .
+
+    -click on function 
+    -register your function, user function name 
+    -then save it .
+
+    -click on Menu
+    -register your Menu "AHED_MENU", user Menu name
+    -Click tab to move 
+       in seq: 1, prompt : EMP , FUNCTION : " YOUR FUNCTION NAME"
+       -then save it .
+         -Appear note: "request id has been submitted..."
+
+-switch to System Administrator -> responsibility 
+      - click on Security
+        -click on responsibility
+          -click on define
+
+   -Appear responsibility window:
+     -write responsibility name, app: APPL/AOL, responsibility key: "AHED_FORMS_RESP_KEY"
+      Data group name : standard, app: APPL/AOL,  then your menu name add "AHED_MENU"
+      -then save it .
+
+-navigates to USERS:
+   -click on define
+   -username: "AHED" 
+   -under responsibility: AHED% -> "AHED_FORM_RESP"
+   -then save it .
+
